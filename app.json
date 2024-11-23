@@ -1,0 +1,19 @@
+{
+    "expo": {
+        "name": "toler",
+        "slug": "toler",
+        "version": "1.0.0",
+        "scheme": "toler",
+        "orientation": "portrait",
+        "userInterfaceStyle": "light",
+        "newArchEnabled": true,
+        "ios": {
+            "bundleIdentifier": "fr.nexhub.toler",
+            "supportsTablet": false
+        },
+        "android": {
+            "package": "fr.nexhub.toler"
+        },
+        "plugins": ["expo-router"]
+    }
+}
