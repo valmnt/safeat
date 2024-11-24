@@ -1,0 +1,8 @@
+{
+    "AuthScreen": {
+        "description": "Log in to identify \nand track your food intolerances!",
+        "emailPlaceholder": "Your email address",
+        "googleSignInButton": "Sign in with Google",
+        "noAccountInfo": "Enjoy quick and secure access \nwith your Google account!"
+    }
+}
