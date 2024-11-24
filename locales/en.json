@@ -1,4 +1,13 @@
 {
+    "Navigation": {
+        "back": "Back"
+    },
+    "Food": {
+        "tolerated": "Tolerated",
+        "not_tolerated": "Not tolerated",
+        "suspected": "Suspected",
+        "unknown": "Unknown"
+    },
     "Auth": {
         "description": "Log in to identify \nand track your food intolerances!",
         "emailPlaceholder": "Your email address",
@@ -7,6 +16,18 @@
         "error": {
             "title": "Google Connection Failed",
             "message": "Please try again or check your network."
+        }
+    },
+    "Home": {
+        "title": {
+            "hello": "Hello,",
+            "howAreYou": "How are you?"
+        },
+        "infoBanner": "This app is in development and at its early stages.\nThank you for your patience!",
+        "illustrationBanner": "Eat what works, \navoid what \ndoesn’t",
+        "foods": {
+            "title": "Foods",
+            "seeMore": "See more"
         }
     }
 }

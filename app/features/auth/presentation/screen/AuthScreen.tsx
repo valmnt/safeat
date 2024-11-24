@@ -24,7 +24,7 @@ const AuthScreen = ({ router }: AuthScreenProps): React.JSX.Element => {
                     onPress={() => {
                         handleGoogleSignIn(() => {
                             router.replace(
-                                '/features/home/presentation/HomeScreen',
+                                '/features/home/presentation/screen/HomeScreen',
                             );
                         });
                     }}

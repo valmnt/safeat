@@ -1,12 +1,11 @@
-import React from 'react';
 import { View, Text } from 'react-native';
 
-const HomeScreen = (): React.JSX.Element => {
+const FoodsScreen = () => {
     return (
         <View className='flex-1 bg-blue-100 justify-center items-center'>
-            <Text>Home View</Text>
+            <Text>FoodsScreen</Text>
         </View>
     );
 };
 
-export default HomeScreen;
+export default FoodsScreen;

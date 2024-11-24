@@ -1,10 +1,11 @@
 import { registerRootComponent } from 'expo';
 import AuthScreen from './features/auth/presentation/screen/AuthScreen';
-import HomeScreen from './features/home/presentation/HomeScreen';
+import HomeScreen from './features/home/presentation/screen/HomeScreen';
 import Toast from 'react-native-toast-message';
 import { useEffect, useState } from 'react';
 import supabase from './config/supabase';
 import { View, ActivityIndicator } from 'react-native';
+import React from 'react';
 
 export default function App(): React.JSX.Element {
     const [isAuthenticated, setAuthenticated] = useState(false);

@@ -1,4 +1,13 @@
 {
+    "Navigation": {
+        "back": "Retour"
+    },
+    "Food": {
+        "tolerated": "Toléré",
+        "not_tolerated": "Non toléré",
+        "suspected": "Suspecté",
+        "unknown": "Inconnu"
+    },
     "Auth": {
         "description": "Connectez-vous pour \nsuivre vos intolérances alimentaires !",
         "emailPlaceholder": "Votre adresse mail",
@@ -7,6 +16,18 @@
         "error": {
             "title": "Échec de la connexion Google",
             "message": "Veuillez réessayer ou vérifier votre réseau."
+        }
+    },
+    "Home": {
+        "title": {
+            "hello": "Bonjour,",
+            "howAreYou": "Comment ça va ?"
+        },
+        "infoBanner": "Cette application est en cours de développement.\nMerci pour votre patience !",
+        "illustrationBanner": "Évitez les maux, \nprivilégiez le \nbien-être",
+        "foods": {
+            "title": "Aliments",
+            "seeMore": "Voir plus"
         }
     }
 }
