@@ -8,5 +8,17 @@
             "title": "Échec de la connexion Google",
             "message": "Veuillez réessayer ou vérifier votre réseau."
         }
+    },
+    "Home": {
+        "title": {
+            "hello": "Bonjour,",
+            "howAreYou": "Comment ça va ?"
+        },
+        "infoBanner": "Cette application est en cours de développement.\nMerci pour votre patience !",
+        "illustrationBanner": "Évitez les maux, \nprivilégiez le \nbien-être",
+        "foods": {
+            "title": "Aliments",
+            "seeMore": "Voir plus"
+        }
     }
 }

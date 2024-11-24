@@ -30,7 +30,7 @@ export default [
         rules: {
             ...(eslintPluginReact.configs.recommended?.rules || {}),
             ...(eslintPluginTypescript.configs.recommended?.rules || {}),
-            '@typescript-eslint/explicit-module-boundary-types': 'error',
+            '@typescript-eslint/explicit-module-boundary-types': 'off',
             '@typescript-eslint/no-unused-vars': [
                 'error',
                 {

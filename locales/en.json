@@ -8,5 +8,17 @@
             "title": "Google Connection Failed",
             "message": "Please try again or check your network."
         }
+    },
+    "Home": {
+        "title": {
+            "hello": "Hello,",
+            "howAreYou": "How are you?"
+        },
+        "infoBanner": "This app is in development and at its early stages.\nThank you for your patience!",
+        "illustrationBanner": "Eat what works, \navoid what \ndoesn’t",
+        "foods": {
+            "title": "Foods",
+            "seeMore": "See more"
+        }
     }
 }

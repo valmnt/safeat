@@ -6,7 +6,7 @@ const AuthSubtitle = (): React.JSX.Element => {
         <Text
             className='
 				text-sm md:text-md lg:text-xl
-				text-center text-gray-200
+				text-center text-gray-300
 				mt-4 md:mt-7'
         >
             {i18n.t('Auth.noAccountInfo')}
