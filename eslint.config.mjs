@@ -41,6 +41,8 @@ export default [
                     argsIgnorePattern: '^_',
                 },
             ],
+            '@typescript-eslint/no-require-imports': 'off',
+            '@typescript-eslint/no-explicit-any': 'off',
             'no-console': 'error',
             'prefer-const': 'error',
             quotes: ['error', 'single', { avoidEscape: true }],
