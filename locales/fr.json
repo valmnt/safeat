@@ -1,8 +1,12 @@
 {
-    "AuthScreen": {
+    "Auth": {
         "description": "Connectez-vous pour \nsuivre vos intolérances alimentaires !",
         "emailPlaceholder": "Votre adresse mail",
         "googleSignInButton": "Se connecter avec Google",
-        "noAccountInfo": "Profitez d'un accès rapide et sécurisé \navec votre compte Google !"
+        "noAccountInfo": "Profitez d'un accès rapide et sécurisé \navec votre compte Google !",
+        "error": {
+            "title": "Échec de la connexion Google",
+            "message": "Veuillez réessayer ou vérifier votre réseau."
+        }
     }
 }

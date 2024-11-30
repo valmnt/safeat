@@ -2,14 +2,21 @@
 import React from 'react';
 import { View, Image, Text, Pressable } from 'react-native';
 import i18n from '@/app/config/i18n';
+import AuthViewModel from './auth-viewmodel';
 
-const AuthScreen = (): React.JSX.Element => {
+const AuthView = (): React.JSX.Element => {
+    const viewModel = new AuthViewModel();
+
     return (
         <View className='bg-blue-100 min-h-screen justify-center'>
             <View className='justify-center items-center'>
                 <MainImage />
                 <Description />
-                <Button />
+                <Button
+                    onPress={() => {
+                        viewModel.authenticationWithGoogle();
+                    }}
+                />
                 <Tip />
             </View>
         </View>
@@ -36,12 +43,16 @@ const Description = (): React.JSX.Element => {
 				text-center text-gray-200
 				sm:text-md md:text-lg xl:text-2xl xxl:text-3xl'
         >
-            {i18n.t('AuthScreen.description')}
+            {i18n.t('Auth.description')}
         </Text>
     );
 };
 
-const Button = (): React.JSX.Element => {
+interface ButtonProps {
+    onPress: () => void;
+}
+
+const Button = ({ onPress }: ButtonProps): React.JSX.Element => {
     return (
         <Pressable
             className='
@@ -49,14 +60,14 @@ const Button = (): React.JSX.Element => {
 				bg-black-100 rounded-xl active:scale-95
 				justify-center items-center 
 				sm:mt-8 md:mt-10 xl:mt-10 '
-            onPress={() => {}}
+            onPress={onPress}
         >
             <Text
                 className='
 					sm:text-lg md:text-xl xl:text-2xl xxl:text-3xl 
 					text-center text-white-100 font-semibold'
             >
-                {i18n.t('AuthScreen.googleSignInButton')}
+                {i18n.t('Auth.googleSignInButton')}
             </Text>
         </Pressable>
     );
@@ -70,9 +81,9 @@ const Tip = (): React.JSX.Element => {
 				text-center text-gray-200
 				sm:mt-4 md:mt-7'
         >
-            {i18n.t('AuthScreen.noAccountInfo')}
+            {i18n.t('Auth.noAccountInfo')}
         </Text>
     );
 };
 
-export default AuthScreen;
+export default AuthView;
