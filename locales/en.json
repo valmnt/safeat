@@ -29,5 +29,12 @@
             "title": "Foods",
             "seeMore": "See more"
         }
+    },
+    "FoodBottomSheet": {
+        "confirm": "Confirm",
+        "error": {
+            "title": "Update Failed",
+            "message": "An error occurred while updating the food status."
+        }
     }
 }

@@ -4,8 +4,6 @@ export abstract class UseCase {
     constructor(repository: Repository) {
         this.repository = repository;
     }
-
-    abstract execute(): unknown;
 }
 
 export abstract class Repository {

@@ -1,6 +1,8 @@
 import i18n from '@/app/config/i18n';
 import FoodCard from '@/app/shared/components/FoodCard';
 import Food from '@/app/shared/models/Food';
+import useBottomSheetStore from '@/app/shared/stores/bottomSheetStore';
+import useFoodStore from '@/app/shared/stores/foodStore';
 import React from 'react';
 import {
     View,
@@ -64,7 +66,11 @@ const FoodsPreview = ({
                 >
                     {foods.map((food, index) => (
                         <View key={index} className='mr-6'>
-                            <FoodCard key={index} food={food} />
+                            <FoodCard
+                                key={index}
+                                food={food}
+                                onPress={() => handlePress(food)}
+                            />
                         </View>
                     ))}
                 </ScrollView>
