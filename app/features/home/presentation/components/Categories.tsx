@@ -6,7 +6,7 @@ import {
     Pressable,
     ActivityIndicator,
 } from 'react-native';
-import Category from '../../../../shared/models/Category';
+import Category from '@/app/shared/models/Category';
 
 interface CategoriesProps {
     categories: Category[];
