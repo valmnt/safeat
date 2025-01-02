@@ -21,7 +21,7 @@ class FoodRepositoryImpl extends FoodRepository {
                 return new Success(value);
             })
             .catch((error: Error) => {
-                return new Failure(error, '', '');
+                return new Failure(error);
             });
     }
 }

@@ -45,6 +45,9 @@
         "allStatus": "Tous les statuts",
         "noResults": "Aucun aliment trouvé",
         "cancel": "Annuler",
-        "validate": "Valider"
+        "validate": "Valider",
+        "error": {
+            "message": "Une erreur est survenue lors du chargement des aliments"
+        }
     }
 }

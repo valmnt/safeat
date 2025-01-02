@@ -44,6 +44,7 @@ const FoodsScreen = () => {
     const [categoryButtonWidth, setCategoryButtonWidth] = useState(0);
     const [statusButtonWidth, setStatusButtonWidth] = useState(0);
     const [search, setSearch] = useState('');
+    const [hasError, setHasError] = useState(false);
 
     const CARD_MARGIN = 2;
     const CARD_WIDTH = 120;
@@ -104,6 +105,11 @@ const FoodsScreen = () => {
                         setHasMore(false);
                     }
                     setFoods(isInitial ? newFoods : [...foods, ...newFoods]);
+                },
+                () => {
+                    setHasError(true);
+                },
+                () => {
                     setLoadingState('ready');
                 },
                 LIMIT,
@@ -167,13 +173,24 @@ const FoodsScreen = () => {
         );
     };
 
-    const renderEmptyList = () => (
-        <View className='flex-1 justify-center items-center'>
-            <Text className='text-gray-300 text-lg text-center'>
-                {i18n.t('Foods.noResults')}
-            </Text>
-        </View>
-    );
+    const renderEmptyList = () => {
+        if (hasError) {
+            return (
+                <View className='flex-1 justify-center items-center'>
+                    <Text className='text-grey-100 text-lg font-medium'>
+                        {i18n.t('Foods.error.message')}
+                    </Text>
+                </View>
+            );
+        }
+        return (
+            <View className='flex-1 justify-center items-center'>
+                <Text className='text-grey-100 text-lg font-medium'>
+                    {i18n.t('Foods.noResults')}
+                </Text>
+            </View>
+        );
+    };
 
     const renderFooter = () => {
         if (loadingState !== 'more') return null;

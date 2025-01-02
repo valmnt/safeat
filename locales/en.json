@@ -45,6 +45,9 @@
         "allStatus": "All status",
         "noResults": "No foods found",
         "cancel": "Cancel",
-        "validate": "Validate"
+        "validate": "Validate",
+        "error": {
+            "message": "An error occurred while loading foods"
+        }
     }
 }

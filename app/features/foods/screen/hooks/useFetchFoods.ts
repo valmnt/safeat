@@ -8,6 +8,8 @@ const useFetchFoods = () => {
     return useCallback(
         async (
             onSuccess: (foods: Food[]) => void,
+            onError: () => void,
+            didFetch: () => void,
             limit: number,
             search?: string,
             category?: string,
@@ -26,7 +28,10 @@ const useFetchFoods = () => {
             );
             if (result instanceof Success) {
                 onSuccess(result.value);
+            } else {
+                onError();
             }
+            didFetch();
         },
         [],
     );
