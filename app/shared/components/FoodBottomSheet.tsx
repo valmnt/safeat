@@ -1,5 +1,8 @@
-import BottomSheet, { BottomSheetView } from '@gorhom/bottom-sheet';
-import { useEffect, useRef, useState } from 'react';
+import BottomSheet, {
+    BottomSheetBackdrop,
+    BottomSheetView,
+} from '@gorhom/bottom-sheet';
+import { useEffect, useRef, useState, useCallback } from 'react';
 import useBottomSheetStore from '../stores/bottomSheetStore';
 import useFoodStore from '../stores/foodStore';
 import { Pressable, Text, View } from 'react-native';
@@ -62,12 +65,25 @@ const FoodBottomSheet = (): React.JSX.Element => {
         }
     };
 
+    const renderBackdrop = useCallback(
+        (props: any) => (
+            <BottomSheetBackdrop
+                {...props}
+                disappearsOnIndex={-1}
+                appearsOnIndex={0}
+                opacity={0.5}
+            />
+        ),
+        [],
+    );
+
     return (
         <BottomSheet
             ref={bottomSheetRef}
             index={-1}
             enablePanDownToClose={true}
             onChange={handleSheetChanges}
+            backdropComponent={renderBackdrop}
         >
             <BottomSheetView className='p-2'>
                 <BottomSheetHeader foodName={selectedFood.name} />
