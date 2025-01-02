@@ -1,5 +1,5 @@
 import { Success, Failure } from '@/app/config/response';
-import UserFoodStatusDataSource from '../../domain/datasouces/UserFoodStatusDataSource';
+import UserFoodStatusDataSource from '../../domain/datasources/UserFoodStatusDataSource';
 import UserFoodStatusRepository from '../../domain/repositories/UserFoodStatusRepository';
 import { FoodStatusType } from '../../models/FoodStatus';
 import i18n from '@/app/config/i18n';

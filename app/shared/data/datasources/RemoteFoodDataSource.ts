@@ -1,5 +1,5 @@
 import supabase from '@/app/config/supabase';
-import FoodDataSource from '../../domain/datasouces/FoodDataSource';
+import FoodDataSource from '../../domain/datasources/FoodDataSource';
 import Food from '../../models/Food';
 import i18n from '@/app/config/i18n';
 

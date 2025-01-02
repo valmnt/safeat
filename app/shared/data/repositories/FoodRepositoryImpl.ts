@@ -1,6 +1,6 @@
 import { Failure, Success } from '@/app/config/response';
 import FoodRepository from '../../domain/repositories/FoodRepository';
-import FoodDataSource from '../../domain/datasouces/FoodDataSource';
+import FoodDataSource from '../../domain/datasources/FoodDataSource';
 import Food from '../../models/Food';
 
 class FoodRepositoryImpl extends FoodRepository {

@@ -1,5 +1,5 @@
 import supabase from '@/app/config/supabase';
-import UserFoodStatusDataSource from '../../domain/datasouces/UserFoodStatusDataSource';
+import UserFoodStatusDataSource from '../../domain/datasources/UserFoodStatusDataSource';
 import { FoodStatusType } from '../../models/FoodStatus';
 
 class RemoteUserFoodDataSource extends UserFoodStatusDataSource {
