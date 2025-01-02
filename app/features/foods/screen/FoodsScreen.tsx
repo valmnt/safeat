@@ -22,88 +22,6 @@ import { FoodStatusType } from '@/app/shared/models/FoodStatus';
 
 type LoadingState = 'initial' | 'more' | 'ready';
 
-interface CategoryPickerModalProps {
-    visible: boolean;
-    selectedCategory: string;
-    categories: Category[];
-    onClose: () => void;
-    onSelect: (value: string) => void;
-    buttonWidth?: number;
-    position?: 'left' | 'right';
-}
-
-const CategoryPickerModal = ({
-    visible,
-    selectedCategory,
-    categories,
-    onClose,
-    onSelect,
-    buttonWidth,
-    position = 'left',
-}: CategoryPickerModalProps) => {
-    const items = [
-        { label: i18n.t('Foods.allCategories'), value: 'all' },
-        ...categories.map(category => ({
-            label: category.name,
-            value: category.id,
-        })),
-    ];
-
-    return (
-        <PlatformPicker
-            visible={visible}
-            title={i18n.t('Foods.categories')}
-            selectedValue={selectedCategory}
-            onClose={onClose}
-            onSelect={onSelect}
-            items={items}
-            buttonWidth={buttonWidth}
-            position={position}
-        />
-    );
-};
-
-interface StatusPickerModalProps {
-    visible: boolean;
-    selectedStatus: string;
-    onClose: () => void;
-    onSelect: (value: string) => void;
-    buttonWidth?: number;
-    position?: 'left' | 'right';
-}
-
-const StatusPickerModal = ({
-    visible,
-    selectedStatus,
-    onClose,
-    onSelect,
-    buttonWidth,
-    position = 'right',
-}: StatusPickerModalProps) => {
-    const items = [
-        { label: i18n.t('Foods.allStatus'), value: 'all' },
-        { label: i18n.t('Food.tolerated'), value: FoodStatusType.tolerated },
-        {
-            label: i18n.t('Food.not_tolerated'),
-            value: FoodStatusType.not_tolerated,
-        },
-        { label: i18n.t('Food.suspected'), value: FoodStatusType.suspected },
-    ];
-
-    return (
-        <PlatformPicker
-            visible={visible}
-            title={i18n.t('Foods.status')}
-            selectedValue={selectedStatus}
-            onClose={onClose}
-            onSelect={onSelect}
-            items={items}
-            buttonWidth={buttonWidth}
-            position={position}
-        />
-    );
-};
-
 const FoodsScreen = () => {
     const { foods, setFoods, setSelectedFood } = useFoodStore();
     const { categories } = useCategoryStore();
@@ -353,6 +271,88 @@ const FoodsScreen = () => {
                 initialNumToRender={numColumns * 4}
             />
         </View>
+    );
+};
+
+interface CategoryPickerModalProps {
+    visible: boolean;
+    selectedCategory: string;
+    categories: Category[];
+    onClose: () => void;
+    onSelect: (value: string) => void;
+    buttonWidth?: number;
+    position?: 'left' | 'right';
+}
+
+const CategoryPickerModal = ({
+    visible,
+    selectedCategory,
+    categories,
+    onClose,
+    onSelect,
+    buttonWidth,
+    position = 'left',
+}: CategoryPickerModalProps) => {
+    const items = [
+        { label: i18n.t('Foods.allCategories'), value: 'all' },
+        ...categories.map(category => ({
+            label: category.name,
+            value: category.id,
+        })),
+    ];
+
+    return (
+        <PlatformPicker
+            visible={visible}
+            title={i18n.t('Foods.categories')}
+            selectedValue={selectedCategory}
+            onClose={onClose}
+            onSelect={onSelect}
+            items={items}
+            buttonWidth={buttonWidth}
+            position={position}
+        />
+    );
+};
+
+interface StatusPickerModalProps {
+    visible: boolean;
+    selectedStatus: string;
+    onClose: () => void;
+    onSelect: (value: string) => void;
+    buttonWidth?: number;
+    position?: 'left' | 'right';
+}
+
+const StatusPickerModal = ({
+    visible,
+    selectedStatus,
+    onClose,
+    onSelect,
+    buttonWidth,
+    position = 'right',
+}: StatusPickerModalProps) => {
+    const items = [
+        { label: i18n.t('Foods.allStatus'), value: 'all' },
+        { label: i18n.t('Food.tolerated'), value: FoodStatusType.tolerated },
+        {
+            label: i18n.t('Food.not_tolerated'),
+            value: FoodStatusType.not_tolerated,
+        },
+        { label: i18n.t('Food.suspected'), value: FoodStatusType.suspected },
+    ];
+
+    return (
+        <PlatformPicker
+            visible={visible}
+            title={i18n.t('Foods.status')}
+            selectedValue={selectedStatus}
+            onClose={onClose}
+            onSelect={onSelect}
+            items={items}
+            buttonWidth={buttonWidth}
+            position={position}
+        />
     );
 };
 
