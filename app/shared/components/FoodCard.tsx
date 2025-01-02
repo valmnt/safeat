@@ -60,7 +60,11 @@ const FoodCard = ({
                     resizeMode='contain'
                 />
                 <View className='w-full justify-center items-center'>
-                    <Text className='text-black-100 text-md font-medium'>
+                    <Text
+                        className='text-black-100 text-md font-medium'
+                        numberOfLines={1}
+                        ellipsizeMode='tail'
+                    >
                         {food.name}
                     </Text>
                 </View>
@@ -69,7 +73,11 @@ const FoodCard = ({
                 className={`${statusColor} w-full h-10 rounded-b-xl justify-center items-center`}
             >
                 <Text
-                    className={`text-sm font-medium ${food.status.type === 'not_tolerated' ? 'text-white-100' : 'text-black-100'}`}
+                    className={`text-sm font-medium ${
+                        food.status.type === 'not_tolerated'
+                            ? 'text-white-100'
+                            : 'text-black-100'
+                    }`}
                 >
                     {i18n.t(`Foods.status.${food.status.type}`)}
                 </Text>

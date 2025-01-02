@@ -57,7 +57,7 @@ const CategoryCard = ({
 }: CategoryCardProps): React.JSX.Element => {
     return (
         <Pressable
-            className='min-w-28 max-w-36 bg-green-300 rounded-2xl justify-center items-center mr-6'
+            className='w-28 bg-green-300 rounded-2xl justify-center items-center mr-6'
             onPress={() => onPress(category.id)}
         >
             <View className='w-full h-3/4 justify-center items-center p-4'>
@@ -66,8 +66,12 @@ const CategoryCard = ({
                     source={{ uri: category.image }}
                 />
             </View>
-            <View className='flex-1 justify-top items-center p-1'>
-                <Text className='text-white-100 text-md font-medium'>
+            <View className='flex-1'>
+                <Text
+                    className='text-white-100 text-md font-medium'
+                    numberOfLines={1}
+                    ellipsizeMode='tail'
+                >
                     {category.name}
                 </Text>
             </View>
