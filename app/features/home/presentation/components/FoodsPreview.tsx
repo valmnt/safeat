@@ -53,7 +53,9 @@ const FoodsPreview = ({
                 </View>
             </View>
             {isLoading ? (
-                <ActivityIndicator size='large' />
+                <View className='w-full lg:w-3/4 h-56 justify-center items-center'>
+                    <ActivityIndicator size='large' />
+                </View>
             ) : (
                 <ScrollView
                     className='w-full lg:w-3/4 h-56'
