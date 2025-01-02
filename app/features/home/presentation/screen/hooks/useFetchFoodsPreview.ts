@@ -5,20 +5,15 @@ import FoodRepositoryImpl from '@/app/shared/data/repositories/FoodRepositoryImp
 import Food from '@/app/shared/models/Food';
 
 const useFetchFoodsPreview = () => {
-    const handleFetchFoodsPreview = useCallback(
-        async (onSuccess: (foods: Food[]) => void) => {
-            const dataSource = new RemoteFoodDataSource();
-            const repository = new FoodRepositoryImpl(dataSource);
+    return useCallback(async (onSuccess: (foods: Food[]) => void) => {
+        const dataSource = new RemoteFoodDataSource();
+        const repository = new FoodRepositoryImpl(dataSource);
 
-            const result = await repository.fetchFoods(10);
-            if (result instanceof Success) {
-                onSuccess(result.value);
-            }
-        },
-        [],
-    );
-
-    return handleFetchFoodsPreview;
+        const result = await repository.fetchFoods(10);
+        if (result instanceof Success) {
+            onSuccess(result.value);
+        }
+    }, []);
 };
 
 export default useFetchFoodsPreview;

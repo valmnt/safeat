@@ -5,7 +5,7 @@ import GoogleAuthRepositoryImpl from '@/app/features/auth/data/repositories/Goog
 import Toast from 'react-native-toast-message';
 
 const useGoogleSignIn = () => {
-    const signInWithGoogle = useCallback(async (onSuccess: () => void) => {
+    return useCallback(async (onSuccess: () => void) => {
         const dataSource = new GoogleAuthDataSource();
         const repository = new GoogleAuthRepositoryImpl(dataSource);
 
@@ -23,8 +23,6 @@ const useGoogleSignIn = () => {
             });
         }
     }, []);
-
-    return signInWithGoogle;
 };
 
 export default useGoogleSignIn;

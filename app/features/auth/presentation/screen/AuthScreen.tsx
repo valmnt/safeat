@@ -13,7 +13,7 @@ interface AuthScreenProps {
 }
 
 const AuthScreen = ({ router }: AuthScreenProps): React.JSX.Element => {
-    const handleGoogleSignIn = useGoogleSignIn();
+    const signInWithGoogle = useGoogleSignIn();
 
     return (
         <View className='bg-blue-100 min-h-screen justify-center'>
@@ -22,7 +22,7 @@ const AuthScreen = ({ router }: AuthScreenProps): React.JSX.Element => {
                 <AuthTitle />
                 <SignInWithGoogleButton
                     onPress={() => {
-                        handleGoogleSignIn(() => {
+                        signInWithGoogle(() => {
                             router.replace(
                                 '/features/home/presentation/screen/HomeScreen',
                             );

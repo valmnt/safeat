@@ -6,7 +6,7 @@ import { Success } from '@/app/config/response';
 import Toast from 'react-native-toast-message';
 
 const useInsertUserFoodStatus = () => {
-    const insertUserFoodStatus = useCallback(
+    return useCallback(
         async (
             foodId: string,
             statusType: FoodStatusType,
@@ -34,8 +34,6 @@ const useInsertUserFoodStatus = () => {
         },
         [],
     );
-
-    return insertUserFoodStatus;
 };
 
 export default useInsertUserFoodStatus;

@@ -20,9 +20,9 @@ interface HomeScreenProps {
 }
 
 const HomeScreen = ({ router }: HomeScreenProps): React.JSX.Element => {
-    const handleSignOut = useSignOut();
-    const handleFetchCategories = useFetchCategories();
-    const handleFetchFoodsPreview = useFetchFoodsPreview();
+    const signOut = useSignOut();
+    const fetchCategories = useFetchCategories();
+    const fetchFoodsPreview = useFetchFoodsPreview();
     const { foods, setFoods } = useFoodStore();
     const { categories, setCategories } = useCategoryStore();
 
@@ -32,7 +32,7 @@ const HomeScreen = ({ router }: HomeScreenProps): React.JSX.Element => {
     useFocusEffect(
         useCallback(() => {
             setLoadingFoods(true);
-            handleFetchFoodsPreview(foods => {
+            fetchFoodsPreview(foods => {
                 setFoods(foods);
                 setLoadingFoods(false);
             });
@@ -40,7 +40,7 @@ const HomeScreen = ({ router }: HomeScreenProps): React.JSX.Element => {
     );
 
     useEffect(() => {
-        handleFetchCategories(categories => {
+        fetchCategories(categories => {
             setCategories(categories);
             setLoadingCategories(false);
         });
@@ -51,7 +51,7 @@ const HomeScreen = ({ router }: HomeScreenProps): React.JSX.Element => {
             <ScrollView showsVerticalScrollIndicator={false}>
                 <SignOutButton
                     onPress={() => {
-                        handleSignOut(() => {
+                        signOut(() => {
                             router.replace(
                                 '/features/auth/presentation/screen/AuthScreen',
                             );

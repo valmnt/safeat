@@ -104,7 +104,7 @@ const FoodsScreen = () => {
     const { foods, setFoods, setSelectedFood } = useFoodStore();
     const { categories } = useCategoryStore();
     const { openBottomSheet } = useBottomSheetStore();
-    const handleFetchFoods = useFetchFoods();
+    const fetchFoods = useFetchFoods();
     const { width: screenWidth } = useWindowDimensions();
     const { selectedCategory: initialCategory } = useLocalSearchParams<{
         selectedCategory?: string;
@@ -176,7 +176,7 @@ const FoodsScreen = () => {
                 setFoods([]);
             }
 
-            handleFetchFoods(
+            fetchFoods(
                 newFoods => {
                     if (newFoods.length < LIMIT) {
                         setHasMore(false);

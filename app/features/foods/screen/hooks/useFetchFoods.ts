@@ -5,7 +5,7 @@ import FoodRepositoryImpl from '@/app/shared/data/repositories/FoodRepositoryImp
 import Food from '@/app/shared/models/Food';
 
 const useFetchFoods = () => {
-    const handleFetchFoods = useCallback(
+    return useCallback(
         async (
             onSuccess: (foods: Food[]) => void,
             limit: number,
@@ -30,8 +30,6 @@ const useFetchFoods = () => {
         },
         [],
     );
-
-    return handleFetchFoods;
 };
 
 export default useFetchFoods;
