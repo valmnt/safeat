@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import SignOutButton from '../components/SignOutButton';
@@ -6,14 +6,14 @@ import HomeTitle from '../components/HomeTitle';
 import InfoBanner from '../components/InfoBanner';
 import IllustrationBanner from '../components/IllustrationBanner';
 import Categories from '../components/Categories';
-import Category from '../../../../shared/models/Category';
 import useSignOut from './hooks/useSignOut';
 import withRouter from '@/app/shared/hooks/withRouter';
-import { Router } from 'expo-router';
+import { Router, useFocusEffect } from 'expo-router';
 import useFetchCategories from './hooks/useFetchCategories';
 import useFetchFoodsPreview from './hooks/useFetchFoodsPreview';
 import useFoodStore from '@/app/shared/stores/foodStore';
 import FoodsPreview from '../components/FoodsPreview';
+import useCategoryStore from '@/app/shared/stores/categoryStore';
 
 interface HomeScreenProps {
     router: Router;
@@ -24,28 +24,26 @@ const HomeScreen = ({ router }: HomeScreenProps): React.JSX.Element => {
     const handleFetchCategories = useFetchCategories();
     const handleFetchFoodsPreview = useFetchFoodsPreview();
     const { foods, setFoods } = useFoodStore();
+    const { categories, setCategories } = useCategoryStore();
 
     const [loadingCategories, setLoadingCategories] = useState(true);
     const [loadingFoods, setLoadingFoods] = useState(true);
-    const [categories, setCategories] = useState<Category[]>([]);
 
-    useEffect(() => {
-        const fetchCategories = () => {
-            handleFetchCategories(categories => {
-                setCategories(categories);
-                setLoadingCategories(false);
-            });
-        };
-
-        const fetchFoods = () => {
+    useFocusEffect(
+        useCallback(() => {
+            setLoadingFoods(true);
             handleFetchFoodsPreview(foods => {
                 setFoods(foods);
                 setLoadingFoods(false);
             });
-        };
+        }, []),
+    );
 
-        fetchCategories();
-        fetchFoods();
+    useEffect(() => {
+        handleFetchCategories(categories => {
+            setCategories(categories);
+            setLoadingCategories(false);
+        });
     }, []);
 
     return (
@@ -66,6 +64,13 @@ const HomeScreen = ({ router }: HomeScreenProps): React.JSX.Element => {
                 <Categories
                     categories={categories}
                     isLoading={loadingCategories}
+                    onPress={(categoryId: string) => {
+                        router.push({
+                            pathname:
+                                '/features/foods/presentation/screen/FoodsScreen',
+                            params: { selectedCategory: categoryId },
+                        });
+                    }}
                 />
                 <FoodsPreview
                     foods={foods}

@@ -8,9 +8,15 @@ class FoodRepositoryImpl extends FoodRepository {
         super(dataSource);
     }
 
-    async fetchFoods(limit: number): Promise<Success<Food[]> | Failure> {
+    async fetchFoods(
+        limit: number,
+        search?: string,
+        category?: string,
+        status?: string,
+        offset?: number,
+    ): Promise<Success<Food[]> | Failure> {
         return await (this.dataSource as FoodDataSource)
-            .fetchFoods(limit)
+            .fetchFoods(limit, search, category, status, offset)
             .then(value => {
                 return new Success(value);
             })

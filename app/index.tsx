@@ -1,13 +1,10 @@
 import { registerRootComponent } from 'expo';
 import AuthScreen from './features/auth/presentation/screen/AuthScreen';
 import HomeScreen from './features/home/presentation/screen/HomeScreen';
-import Toast from 'react-native-toast-message';
 import { useEffect, useState } from 'react';
 import supabase from './config/supabase';
 import { View, ActivityIndicator } from 'react-native';
 import React from 'react';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import FoodBottomSheet from './shared/components/FoodBottomSheet';
 
 export default function App(): React.JSX.Element {
     const [isAuthenticated, setAuthenticated] = useState(false);
@@ -31,13 +28,7 @@ export default function App(): React.JSX.Element {
         );
     }
 
-    return (
-        <GestureHandlerRootView>
-            {isAuthenticated ? <HomeScreen /> : <AuthScreen />}
-            <Toast />
-            <FoodBottomSheet />
-        </GestureHandlerRootView>
-    );
+    return isAuthenticated ? <HomeScreen /> : <AuthScreen />;
 }
 
 registerRootComponent(App);

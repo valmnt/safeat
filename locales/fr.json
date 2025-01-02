@@ -36,5 +36,15 @@
             "title": "Mise à jour échouée",
             "message": "Une erreur est survenue lors de la mise à jour du statut de l’aliment."
         }
+    },
+    "Foods": {
+        "search": "Rechercher un aliment...",
+        "categories": "Categories",
+        "status": "Statuts",
+        "allCategories": "Toutes les catégories",
+        "allStatus": "Tous les statuts",
+        "noResults": "Aucun aliment trouvé",
+        "cancel": "Annuler",
+        "validate": "Valider"
     }
 }

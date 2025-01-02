@@ -11,11 +11,13 @@ import Category from '../../../../shared/models/Category';
 interface CategoriesProps {
     categories: Category[];
     isLoading: boolean;
+    onPress: (categoryId: string) => void;
 }
 
 const Categories = ({
     categories,
     isLoading,
+    onPress,
 }: CategoriesProps): React.JSX.Element => {
     if (isLoading) {
         return <ActivityIndicator size='large' />;
@@ -33,7 +35,11 @@ const Categories = ({
                 }}
             >
                 {categories.map((category, index) => (
-                    <CategoryCard key={index} category={category} />
+                    <CategoryCard
+                        key={index}
+                        category={category}
+                        onPress={onPress}
+                    />
                 ))}
             </ScrollView>
         </View>
@@ -42,11 +48,18 @@ const Categories = ({
 
 interface CategoryCardProps {
     category: Category;
+    onPress: (categoryId: string) => void;
 }
 
-const CategoryCard = ({ category }: CategoryCardProps): React.JSX.Element => {
+const CategoryCard = ({
+    category,
+    onPress,
+}: CategoryCardProps): React.JSX.Element => {
     return (
-        <Pressable className='min-w-28 max-w-36 bg-green-300 rounded-2xl justify-center items-center mr-6'>
+        <Pressable
+            className='min-w-28 max-w-36 bg-green-300 rounded-2xl justify-center items-center mr-6'
+            onPress={() => onPress(category.id)}
+        >
             <View className='w-full h-3/4 justify-center items-center p-4'>
                 <Image
                     className='w-full h-full'

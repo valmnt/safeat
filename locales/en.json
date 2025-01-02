@@ -36,5 +36,15 @@
             "title": "Update Failed",
             "message": "An error occurred while updating the food status."
         }
+    },
+    "Foods": {
+        "search": "Search a food...",
+        "categories": "Categories",
+        "status": "Status",
+        "allCategories": "All categories",
+        "allStatus": "All status",
+        "noResults": "No foods found",
+        "cancel": "Cancel",
+        "validate": "Validate"
     }
 }
