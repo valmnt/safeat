@@ -2,16 +2,14 @@ import { useCallback } from 'react';
 import { Success } from '@/app/config/response';
 import GoogleAuthDataSource from '@/app/features/auth/data/datasources/GoogleAuthDataSource';
 import GoogleAuthRepositoryImpl from '@/app/features/auth/data/repositories/GoogleAuthRepositoryImpl';
-import SignInWithGoogleUseCase from '@/app/features/auth/domain/usecases/SignInWithGoogleUseCase';
 import Toast from 'react-native-toast-message';
 
 const useGoogleSignIn = () => {
     const signInWithGoogle = useCallback(async (onSuccess: () => void) => {
         const dataSource = new GoogleAuthDataSource();
         const repository = new GoogleAuthRepositoryImpl(dataSource);
-        const useCase = new SignInWithGoogleUseCase(repository);
 
-        const result = await useCase.execute();
+        const result = await repository.signIn();
         if (result instanceof Success) {
             if (result.value) {
                 onSuccess();

@@ -66,8 +66,7 @@ const HomeScreen = ({ router }: HomeScreenProps): React.JSX.Element => {
                     isLoading={loadingCategories}
                     onPress={(categoryId: string) => {
                         router.push({
-                            pathname:
-                                '/features/foods/presentation/screen/FoodsScreen',
+                            pathname: '/features/foods/screen/FoodsScreen',
                             params: { selectedCategory: categoryId },
                         });
                     }}
@@ -76,9 +75,7 @@ const HomeScreen = ({ router }: HomeScreenProps): React.JSX.Element => {
                     foods={foods}
                     isLoading={loadingFoods}
                     onPress={() => {
-                        router.push(
-                            '/features/foods/presentation/screen/FoodsScreen',
-                        );
+                        router.push('/features/foods/screen/FoodsScreen');
                     }}
                 />
             </ScrollView>

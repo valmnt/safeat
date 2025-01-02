@@ -2,7 +2,6 @@ import { useCallback } from 'react';
 import { Success } from '@/app/config/response';
 import RemoteFoodDataSource from '@/app/shared/data/datasources/RemoteFoodDataSource';
 import FoodRepositoryImpl from '@/app/shared/data/repositories/FoodRepositoryImpl';
-import FetchFoodsUseCase from '../../../domain/usecases/FetchFoodsUseCase';
 import Food from '@/app/shared/models/Food';
 
 const useFetchFoods = () => {
@@ -17,14 +16,13 @@ const useFetchFoods = () => {
         ) => {
             const dataSource = new RemoteFoodDataSource();
             const repository = new FoodRepositoryImpl(dataSource);
-            const useCase = new FetchFoodsUseCase(repository);
 
-            const result = await useCase.execute(
+            const result = await repository.fetchFoods(
                 limit,
-                offset,
                 search,
                 category,
                 status,
+                offset,
             );
             if (result instanceof Success) {
                 onSuccess(result.value);

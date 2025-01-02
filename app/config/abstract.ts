@@ -1,11 +1,3 @@
-export abstract class UseCase {
-    protected repository: Repository;
-
-    constructor(repository: Repository) {
-        this.repository = repository;
-    }
-}
-
 export abstract class Repository {
     protected dataSource: DataSource;
 
@@ -15,4 +7,4 @@ export abstract class Repository {
 }
 export abstract class DataSource {}
 
-export default { UseCase, Repository, DataSource };
+export default { Repository, DataSource };
