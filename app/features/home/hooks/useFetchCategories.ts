@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
-import RemoteCategoryDataSource from '../../../data/datasources/RemoteCategoryDataSource';
-import CategoryRepositoryImpl from '../../../data/repositories/CategoryRepositoryImpl';
+import RemoteCategoryDataSource from '../data/datasources/RemoteCategoryDataSource';
+import CategoryRepositoryImpl from '../data/repositories/CategoryRepositoryImpl';
 import { Success } from '@/app/config/response';
 import Category from '@/app/shared/models/Category';
 

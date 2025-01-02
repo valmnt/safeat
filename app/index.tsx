@@ -1,6 +1,6 @@
 import { registerRootComponent } from 'expo';
-import AuthScreen from './features/auth/presentation/screen/AuthScreen';
-import HomeScreen from './features/home/presentation/screen/HomeScreen';
+import AuthScreen from './features/auth/presentation/AuthScreen';
+import HomeScreen from './features/home/presentation/HomeScreen';
 import { useEffect, useState } from 'react';
 import supabase from './config/supabase';
 import { View, ActivityIndicator } from 'react-native';

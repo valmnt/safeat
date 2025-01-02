@@ -2,11 +2,11 @@ import React from 'react';
 import { View } from 'react-native';
 import withRouter from '@/app/shared/hooks/withRouter';
 import { Router } from 'expo-router';
-import useGoogleSignIn from './hooks/useGoogleSignIn';
-import AuthIllustration from '../components/AutIllustration';
-import AuthTitle from '../components/AuthTitle';
-import SignInWithGoogleButton from '../components/SignInWithGoogleButton';
-import AuthSubtitle from '../components/AuthSubtitle';
+import useGoogleSignIn from '../hooks/useGoogleSignIn';
+import AuthIllustration from './components/AutIllustration';
+import AuthTitle from './components/AuthTitle';
+import SignInWithGoogleButton from './components/SignInWithGoogleButton';
+import AuthSubtitle from './components/AuthSubtitle';
 
 interface AuthScreenProps {
     router: Router;
@@ -24,7 +24,7 @@ const AuthScreen = ({ router }: AuthScreenProps): React.JSX.Element => {
                     onPress={() => {
                         signInWithGoogle(() => {
                             router.replace(
-                                '/features/home/presentation/screen/HomeScreen',
+                                '/features/home/presentation/HomeScreen',
                             );
                         });
                     }}

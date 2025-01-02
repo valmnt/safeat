@@ -1,18 +1,18 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import SignOutButton from '../components/SignOutButton';
-import HomeTitle from '../components/HomeTitle';
-import InfoBanner from '../components/InfoBanner';
-import IllustrationBanner from '../components/IllustrationBanner';
-import Categories from '../components/Categories';
-import useSignOut from './hooks/useSignOut';
+import SignOutButton from './components/SignOutButton';
+import HomeTitle from './components/HomeTitle';
+import InfoBanner from './components/InfoBanner';
+import IllustrationBanner from './components/IllustrationBanner';
+import Categories from './components/Categories';
+import useSignOut from '../hooks/useSignOut';
 import withRouter from '@/app/shared/hooks/withRouter';
 import { Router, useFocusEffect } from 'expo-router';
-import useFetchCategories from './hooks/useFetchCategories';
-import useFetchFoodsPreview from './hooks/useFetchFoodsPreview';
+import useFetchCategories from '../hooks/useFetchCategories';
+import useFetchFoodsPreview from '../hooks/useFetchFoodsPreview';
 import useFoodStore from '@/app/shared/stores/foodStore';
-import FoodsPreview from '../components/FoodsPreview';
+import FoodsPreview from './components/FoodsPreview';
 import useCategoryStore from '@/app/shared/stores/categoryStore';
 
 interface HomeScreenProps {
@@ -53,7 +53,7 @@ const HomeScreen = ({ router }: HomeScreenProps): React.JSX.Element => {
                     onPress={() => {
                         signOut(() => {
                             router.replace(
-                                '/features/auth/presentation/screen/AuthScreen',
+                                '/features/auth/presentation/AuthScreen',
                             );
                         });
                     }}
@@ -66,7 +66,8 @@ const HomeScreen = ({ router }: HomeScreenProps): React.JSX.Element => {
                     isLoading={loadingCategories}
                     onPress={(categoryId: string) => {
                         router.push({
-                            pathname: '/features/foods/screen/FoodsScreen',
+                            pathname:
+                                '/features/foods/presentation/FoodsScreen',
                             params: { selectedCategory: categoryId },
                         });
                     }}
@@ -75,7 +76,7 @@ const HomeScreen = ({ router }: HomeScreenProps): React.JSX.Element => {
                     foods={foods}
                     isLoading={loadingFoods}
                     onPress={() => {
-                        router.push('/features/foods/screen/FoodsScreen');
+                        router.push('/features/foods/presentation/FoodsScreen');
                     }}
                 />
             </ScrollView>
