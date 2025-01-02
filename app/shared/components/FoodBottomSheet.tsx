@@ -164,7 +164,7 @@ const SubmitStatusButton = ({
 							text-lg md:text-xl xl:text-2xl xxl:text-3xl 
 							text-center text-white-100 font-semibold'
                     >
-                        {i18n.t('FoodBottomSheet.confirm')}
+                        {i18n.t('Common.actions.confirm')}
                     </Text>
                 </Pressable>
             )}

@@ -37,7 +37,7 @@ const FoodsPreview = ({
             <View className='w-11/12 lg:w-3/4 h-12 flex-row'>
                 <View className='flex-1 justify-center items-start'>
                     <Text className='text-gray-300 text-xl font-semibold'>
-                        {i18n.t('Home.foods.title')}
+                        {i18n.t('Home.foodsPreview')}
                     </Text>
                 </View>
                 <View className='flex-1 justify-center items-end mr-2'>
@@ -46,7 +46,7 @@ const FoodsPreview = ({
                         onPress={onPress}
                     >
                         <Text className='text-black-100 text-xl font-bold underline mr-1'>
-                            {i18n.t('Home.foods.seeMore')}
+                            {i18n.t('Common.actions.seeMore')}
                         </Text>
                         <Feather name='arrow-right' size={21} color='#333' />
                     </Pressable>

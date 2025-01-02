@@ -2,14 +2,22 @@
     "Navigation": {
         "back": "Retour"
     },
-    "Food": {
-        "tolerated": "Toléré",
-        "not_tolerated": "Non toléré",
-        "suspected": "Suspecté",
-        "unknown": "Inconnu"
+    "Common": {
+        "error": {
+            "title": "Une erreur est survenue",
+            "loading": "Une erreur est survenue lors du chargement",
+            "update": "Une erreur est survenue lors de la mise à jour",
+            "network": "Veuillez vérifier votre connexion internet"
+        },
+        "actions": {
+            "cancel": "Annuler",
+            "validate": "Valider",
+            "confirm": "Confirmer",
+            "seeMore": "Voir plus"
+        }
     },
     "Auth": {
-        "description": "Connectez-vous pour \nsuivre vos intolérances alimentaires !",
+        "description": "Connectez-vous pour \nsuivre vos intolérances alimentaires !",
         "emailPlaceholder": "Votre adresse mail",
         "googleSignInButton": "Se connecter avec Google",
         "noAccountInfo": "Profitez d'un accès rapide et sécurisé \navec votre compte Google !",
@@ -25,29 +33,25 @@
         },
         "infoBanner": "Cette application est en cours de développement.\nMerci pour votre patience !",
         "illustrationBanner": "Évitez les maux, \nprivilégiez le \nbien-être",
-        "foods": {
-            "title": "Aliments",
-            "seeMore": "Voir plus"
-        }
-    },
-    "FoodBottomSheet": {
-        "confirm": "Confirmer",
-        "error": {
-            "title": "Mise à jour échouée",
-            "message": "Une erreur est survenue lors de la mise à jour du statut de l’aliment."
-        }
+        "foodsPreview": "Aliments"
     },
     "Foods": {
         "search": "Rechercher un aliment...",
-        "categories": "Categories",
-        "status": "Statuts",
-        "allCategories": "Toutes les catégories",
-        "allStatus": "Tous les statuts",
-        "noResults": "Aucun aliment trouvé",
-        "cancel": "Annuler",
-        "validate": "Valider",
-        "error": {
-            "message": "Une erreur est survenue lors du chargement des aliments"
+        "filters": {
+            "categories": "Catégories",
+            "status": "Statuts",
+            "allCategories": "Toutes les catégories",
+            "allStatus": "Tous les statuts"
+        },
+        "status": {
+            "tolerated": "Toléré",
+            "not_tolerated": "Non toléré",
+            "suspected": "Suspecté",
+            "unknown": "Inconnu"
+        },
+        "messages": {
+            "noResults": "Aucun aliment trouvé",
+            "error": "Une erreur est survenue lors du chargement des aliments"
         }
     }
 }

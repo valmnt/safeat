@@ -71,7 +71,7 @@ const FoodCard = ({
                 <Text
                     className={`text-sm font-medium ${food.status.type === 'not_tolerated' ? 'text-white-100' : 'text-black-100'}`}
                 >
-                    {i18n.t(`Food.${food.status.type}`)}
+                    {i18n.t(`Foods.status.${food.status.type}`)}
                 </Text>
             </View>
         </Pressable>

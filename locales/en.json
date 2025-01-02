@@ -2,11 +2,18 @@
     "Navigation": {
         "back": "Back"
     },
-    "Food": {
-        "tolerated": "Tolerated",
-        "not_tolerated": "Not tolerated",
-        "suspected": "Suspected",
-        "unknown": "Unknown"
+    "Common": {
+        "error": {
+            "title": "An error occured",
+            "loading": "An error occurred while loading",
+            "update": "An error occurred while updating"
+        },
+        "actions": {
+            "cancel": "Cancel",
+            "validate": "Validate",
+            "confirm": "Confirm",
+            "seeMore": "See more"
+        }
     },
     "Auth": {
         "description": "Log in to identify \nand track your food intolerances!",
@@ -24,30 +31,26 @@
             "howAreYou": "How are you?"
         },
         "infoBanner": "This app is in development and at its early stages.\nThank you for your patience!",
-        "illustrationBanner": "Eat what works, \navoid what \ndoesn’t",
-        "foods": {
-            "title": "Foods",
-            "seeMore": "See more"
-        }
-    },
-    "FoodBottomSheet": {
-        "confirm": "Confirm",
-        "error": {
-            "title": "Update Failed",
-            "message": "An error occurred while updating the food status."
-        }
+        "illustrationBanner": "Eat what works, \navoid what \ndoesn't",
+        "foodsPreview": "Foods"
     },
     "Foods": {
         "search": "Search a food...",
-        "categories": "Categories",
-        "status": "Status",
-        "allCategories": "All categories",
-        "allStatus": "All status",
-        "noResults": "No foods found",
-        "cancel": "Cancel",
-        "validate": "Validate",
-        "error": {
-            "message": "An error occurred while loading foods"
+        "filters": {
+            "categories": "Categories",
+            "status": "Status",
+            "allCategories": "All categories",
+            "allStatus": "All status"
+        },
+        "status": {
+            "tolerated": "Tolerated",
+            "not_tolerated": "Not tolerated",
+            "suspected": "Suspected",
+            "unknown": "Unknown"
+        },
+        "messages": {
+            "noResults": "No foods found",
+            "error": "An error occurred while loading foods"
         }
     }
 }

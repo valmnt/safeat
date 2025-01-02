@@ -137,23 +137,25 @@ const FoodsScreen = () => {
 
     const getSelectedCategoryName = () => {
         if (selectedCategory === 'all')
-            return i18n.t('Foods.allCategories').toString();
+            return i18n.t('Foods.filters.allCategories').toString();
         const category = categories.find(c => c.id === selectedCategory);
-        return category?.name || i18n.t('Foods.allCategories').toString();
+        return (
+            category?.name || i18n.t('Foods.filters.allCategories').toString()
+        );
     };
 
     const getSelectedStatusName = () => {
         switch (selectedStatus) {
             case 'all':
-                return i18n.t('Foods.allStatus');
+                return i18n.t('Foods.filters.allStatus');
             case FoodStatusType.tolerated:
-                return i18n.t('Food.tolerated');
+                return i18n.t('Foods.status.tolerated');
             case FoodStatusType.not_tolerated:
-                return i18n.t('Food.not_tolerated');
+                return i18n.t('Foods.status.not_tolerated');
             case FoodStatusType.suspected:
-                return i18n.t('Food.suspected');
+                return i18n.t('Foods.status.suspected');
             default:
-                return i18n.t('Foods.allStatus');
+                return i18n.t('Foods.filters.allStatus');
         }
     };
 
@@ -178,7 +180,7 @@ const FoodsScreen = () => {
             return (
                 <View className='flex-1 justify-center items-center'>
                     <Text className='text-grey-100 text-lg font-medium'>
-                        {i18n.t('Foods.error.message')}
+                        {i18n.t('Foods.messages.error')}
                     </Text>
                 </View>
             );
@@ -186,7 +188,7 @@ const FoodsScreen = () => {
         return (
             <View className='flex-1 justify-center items-center'>
                 <Text className='text-grey-100 text-lg font-medium'>
-                    {i18n.t('Foods.noResults')}
+                    {i18n.t('Foods.messages.noResults')}
                 </Text>
             </View>
         );
@@ -311,7 +313,7 @@ const CategoryPickerModal = ({
     position = 'left',
 }: CategoryPickerModalProps) => {
     const items = [
-        { label: i18n.t('Foods.allCategories'), value: 'all' },
+        { label: i18n.t('Foods.filters.allCategories'), value: 'all' },
         ...categories.map(category => ({
             label: category.name,
             value: category.id,
@@ -321,7 +323,7 @@ const CategoryPickerModal = ({
     return (
         <PlatformPicker
             visible={visible}
-            title={i18n.t('Foods.categories')}
+            title={i18n.t('Foods.filters.categories')}
             selectedValue={selectedCategory}
             onClose={onClose}
             onSelect={onSelect}
@@ -350,19 +352,25 @@ const StatusPickerModal = ({
     position = 'right',
 }: StatusPickerModalProps) => {
     const items = [
-        { label: i18n.t('Foods.allStatus'), value: 'all' },
-        { label: i18n.t('Food.tolerated'), value: FoodStatusType.tolerated },
+        { label: i18n.t('Foods.filters.allStatus'), value: 'all' },
         {
-            label: i18n.t('Food.not_tolerated'),
+            label: i18n.t('Foods.status.tolerated'),
+            value: FoodStatusType.tolerated,
+        },
+        {
+            label: i18n.t('Foods.status.not_tolerated'),
             value: FoodStatusType.not_tolerated,
         },
-        { label: i18n.t('Food.suspected'), value: FoodStatusType.suspected },
+        {
+            label: i18n.t('Foods.status.suspected'),
+            value: FoodStatusType.suspected,
+        },
     ];
 
     return (
         <PlatformPicker
             visible={visible}
-            title={i18n.t('Foods.status')}
+            title={i18n.t('Foods.filters.status')}
             selectedValue={selectedStatus}
             onClose={onClose}
             onSelect={onSelect}

@@ -21,8 +21,8 @@ class UserFoodRepositoryImpl extends UserFoodStatusRepository {
             .catch((error: Error) => {
                 return new Failure(
                     error,
-                    i18n.t('FoodBottomSheet.error.title'),
-                    i18n.t('FoodBottomSheet.error.message'),
+                    i18n.t('Common.error.title'),
+                    i18n.t('Common.error.updating'),
                 );
             });
     }

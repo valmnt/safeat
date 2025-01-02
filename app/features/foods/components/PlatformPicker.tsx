@@ -19,12 +19,14 @@ interface PickerHeaderProps {
 const PickerHeader = ({ title, onCancel, onValidate }: PickerHeaderProps) => (
     <View className='flex-row justify-between items-center p-4 border-b border-gray-100'>
         <TouchableOpacity onPress={onCancel}>
-            <Text className='text-red-100'>{i18n.t('Foods.cancel')}</Text>
+            <Text className='text-red-100'>
+                {i18n.t('Common.actions.cancel')}
+            </Text>
         </TouchableOpacity>
         <Text className='text-lg font-medium text-black-100'>{title}</Text>
         <TouchableOpacity onPress={onValidate}>
             <Text className='text-black-100 font-medium'>
-                {i18n.t('Foods.validate')}
+                {i18n.t('Common.actions.validate')}
             </Text>
         </TouchableOpacity>
     </View>
