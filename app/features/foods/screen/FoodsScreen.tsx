@@ -18,6 +18,7 @@ import PlatformPicker from '../components/PlatformPicker';
 import SearchBar from '../components/SearchBar';
 import FoodCard from '@/app/shared/components/FoodCard';
 import { useLocalSearchParams } from 'expo-router';
+import { FoodStatusType } from '@/app/shared/models/FoodStatus';
 
 type LoadingState = 'initial' | 'more' | 'ready';
 
@@ -81,9 +82,12 @@ const StatusPickerModal = ({
 }: StatusPickerModalProps) => {
     const items = [
         { label: i18n.t('Foods.allStatus'), value: 'all' },
-        { label: i18n.t('Food.tolerated'), value: 'tolerated' },
-        { label: i18n.t('Food.not_tolerated'), value: 'not_tolerated' },
-        { label: i18n.t('Food.suspected'), value: 'suspected' },
+        { label: i18n.t('Food.tolerated'), value: FoodStatusType.tolerated },
+        {
+            label: i18n.t('Food.not_tolerated'),
+            value: FoodStatusType.not_tolerated,
+        },
+        { label: i18n.t('Food.suspected'), value: FoodStatusType.suspected },
     ];
 
     return (
@@ -218,11 +222,11 @@ const FoodsScreen = () => {
         switch (selectedStatus) {
             case 'all':
                 return i18n.t('Foods.allStatus');
-            case 'tolerated':
+            case FoodStatusType.tolerated:
                 return i18n.t('Food.tolerated');
-            case 'not_tolerated':
+            case FoodStatusType.not_tolerated:
                 return i18n.t('Food.not_tolerated');
-            case 'suspected':
+            case FoodStatusType.suspected:
                 return i18n.t('Food.suspected');
             default:
                 return i18n.t('Foods.allStatus');

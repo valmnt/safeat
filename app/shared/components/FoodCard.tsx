@@ -2,6 +2,7 @@ import { View, Text, Image, Pressable } from 'react-native';
 import Food from '../models/Food';
 import { useMemo } from 'react';
 import i18n from '@/app/config/i18n';
+import { FoodStatusType } from '../models/FoodStatus';
 
 interface FoodCardProps {
     food: Food;
@@ -22,11 +23,11 @@ const FoodCard = ({
 
     const statusColor = useMemo(() => {
         switch (food.status.type) {
-            case 'tolerated':
+            case FoodStatusType.tolerated:
                 return 'bg-green-100';
-            case 'not_tolerated':
+            case FoodStatusType.not_tolerated:
                 return 'bg-red-100';
-            case 'suspected':
+            case FoodStatusType.suspected:
                 return 'bg-yellow-100';
             default:
                 return 'bg-gray-200';
@@ -36,11 +37,11 @@ const FoodCard = ({
     const borderColor = useMemo(() => {
         if (!isSelected) return '';
         switch (food.status.type) {
-            case 'tolerated':
+            case FoodStatusType.tolerated:
                 return 'border-4 border-green-100';
-            case 'not_tolerated':
+            case FoodStatusType.not_tolerated:
                 return 'border-4 border-red-100';
-            case 'suspected':
+            case FoodStatusType.suspected:
                 return 'border-4 border-yellow-100';
             default:
                 return 'border-4 border-gray-200';
