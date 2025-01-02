@@ -1,4 +1,4 @@
-import { DataSource } from '@/app/config/abstract';
+import { DataSource } from '@/app/config/base';
 import { FoodStatusType } from '../../models/FoodStatus';
 
 abstract class UserFoodStatusDataSource implements DataSource {

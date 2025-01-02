@@ -1,4 +1,4 @@
-import { Repository } from '@/app/config/abstract';
+import { Repository } from '@/app/config/base';
 import { Success, Failure } from '@/app/config/response';
 import Category from '@/app/shared/models/Category';
 

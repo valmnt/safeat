@@ -1,4 +1,4 @@
-import { Repository } from '@/app/config/abstract';
+import { Repository } from '@/app/config/base';
 import { FoodStatusType } from '../../models/FoodStatus';
 import { Success, Failure } from '@/app/config/response';
 

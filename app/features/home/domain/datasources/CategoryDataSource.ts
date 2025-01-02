@@ -1,4 +1,4 @@
-import { DataSource } from '@/app/config/abstract';
+import { DataSource } from '@/app/config/base';
 import Category from '@/app/shared/models/Category';
 
 abstract class CategoryDataSource implements DataSource {
