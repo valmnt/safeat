@@ -12,7 +12,7 @@ class RemoteCategoryDataSource implements CategoryDataSource {
             response.data?.map(item => {
                 const category = Category.fromJSON(item);
                 category.image = supabase.storage
-                    .from('toler_public')
+                    .from('safeat_public')
                     .getPublicUrl(category.image).data.publicUrl;
 
                 return category;

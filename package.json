@@ -1,7 +1,7 @@
 {
-    "name": "toler",
+    "name": "safeat",
     "version": "1.0.0",
-    "scheme": "fr.nexhub.toler",
+    "scheme": "org.stixe.safeat",
     "main": "expo-router/entry",
     "scripts": {
         "start": "expo start",

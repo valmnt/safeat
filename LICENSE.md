@@ -1,6 +1,6 @@
 # Private Ownership License
 
-**Copyright (c) Nexhub 2024**
+**Copyright (c) Stixe 2024**
 
 **All rights reserved.**
 
@@ -8,4 +8,4 @@ You are not permitted to use, reproduce, modify, or distribute this code in any 
 
 This code is the exclusive property of the author and may not be used for any purpose, personal or commercial.
 
-**For any permission requests, please contact: support@nexhub.fr**
+**For any permission requests, please contact: valentin@stixe.org**

@@ -1,18 +1,18 @@
 {
     "expo": {
-        "name": "toler",
-        "slug": "toler",
+        "name": "safeat",
+        "slug": "safeat",
         "version": "1.0.0",
-        "scheme": "toler",
+        "scheme": "safeat",
         "orientation": "portrait",
         "userInterfaceStyle": "light",
         "newArchEnabled": true,
         "ios": {
-            "bundleIdentifier": "fr.nexhub.toler",
+            "bundleIdentifier": "org.stixe.safeat",
             "supportsTablet": true
         },
         "android": {
-            "package": "fr.nexhub.toler"
+            "package": "org.stixe.safeat"
         },
         "plugins": ["expo-router", "expo-localization"]
     }

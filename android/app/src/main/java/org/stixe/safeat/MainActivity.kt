@@ -1,4 +1,4 @@
-package fr.nexhub.toler
+package org.stixe.safeat
 
 import android.os.Build
 import android.os.Bundle

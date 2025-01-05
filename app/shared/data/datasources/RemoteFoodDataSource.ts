@@ -50,7 +50,7 @@ class RemoteFoodDataSource implements FoodDataSource {
 
         return data?.map((item: any) => {
             item.image = supabase.storage
-                .from('toler_public')
+                .from('safeat_public')
                 .getPublicUrl(item.image).data.publicUrl;
             const food = Food.from(item, i18n.locale);
             return food;

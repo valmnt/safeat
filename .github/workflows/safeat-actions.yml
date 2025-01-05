@@ -1,4 +1,4 @@
-name: Toler CI/CD
+name: Safeat CI/CD
 
 on:
     push:
