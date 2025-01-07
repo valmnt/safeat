@@ -154,6 +154,8 @@ const FoodsScreen = () => {
                 return i18n.t('Foods.status.not_tolerated');
             case FoodStatusType.suspected:
                 return i18n.t('Foods.status.suspected');
+            case FoodStatusType.unknown:
+                return i18n.t('Foods.status.unknown');
             default:
                 return i18n.t('Foods.filters.allStatus');
         }
@@ -364,6 +366,10 @@ const StatusPickerModal = ({
         {
             label: i18n.t('Foods.status.suspected'),
             value: FoodStatusType.suspected,
+        },
+        {
+            label: i18n.t('Foods.status.unknown'),
+            value: FoodStatusType.unknown,
         },
     ];
 

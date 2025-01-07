@@ -2,6 +2,7 @@ import supabase from '@/app/config/supabase';
 import FoodDataSource from '../../domain/datasources/FoodDataSource';
 import Food from '../../models/Food';
 import i18n from '@/app/config/i18n';
+import { FoodStatusType } from '../../models/FoodStatus';
 
 class RemoteFoodDataSource implements FoodDataSource {
     async fetchFoods(
@@ -35,9 +36,13 @@ class RemoteFoodDataSource implements FoodDataSource {
         }
 
         if (status && status !== 'all') {
-            query = query
-                .not('user_food_status', 'is', null)
-                .eq('user_food_status.status.type', status);
+            if (status === FoodStatusType.unknown) {
+                query = query.is('user_food_status', null);
+            } else {
+                query = query
+                    .not('user_food_status', 'is', null)
+                    .eq('user_food_status.status.type', status);
+            }
         }
 
         if (offset !== undefined) {

@@ -3,7 +3,7 @@ import { FoodStatusType } from '../../models/FoodStatus';
 import { Success, Failure } from '@/app/config/response';
 
 abstract class UserFoodStatusRepository extends Repository {
-    abstract insertUserFoodStatus(
+    abstract upsertOrDeleteUserFoodStatus(
         foodId: string,
         statusType: FoodStatusType,
     ): Promise<Success<void> | Failure>;

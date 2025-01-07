@@ -5,7 +5,7 @@ import UserFoodRepositoryImpl from '../data/repositories/UserFoodRepositoryImpl'
 import { Success } from '@/app/config/response';
 import Toast from 'react-native-toast-message';
 
-const useInsertUserFoodStatus = () => {
+const useUpsertOrDeleteUserFoodStatus = () => {
     return useCallback(
         async (
             foodId: string,
@@ -16,7 +16,7 @@ const useInsertUserFoodStatus = () => {
             const dataSource = new RemoteUserFoodDataSource();
             const repository = new UserFoodRepositoryImpl(dataSource);
 
-            const result = await repository.insertUserFoodStatus(
+            const result = await repository.upsertOrDeleteUserFoodStatus(
                 foodId,
                 statusType,
             );
@@ -36,4 +36,4 @@ const useInsertUserFoodStatus = () => {
     );
 };
 
-export default useInsertUserFoodStatus;
+export default useUpsertOrDeleteUserFoodStatus;

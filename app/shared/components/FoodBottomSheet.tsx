@@ -10,12 +10,12 @@ import FoodCard from './FoodCard';
 import { ScrollView } from 'react-native-gesture-handler';
 import { FoodStatusType } from '../models/FoodStatus';
 import i18n from '@/app/config/i18n';
-import useInsertUserFoodStatus from '../hooks/useInsertUserFoodStatus';
 import Food from '../models/Food';
 import { ActivityIndicator } from 'react-native';
+import useUpsertOrDeleteUserFoodStatus from '../hooks/useUpsertOrDeleteUserFoodStatus';
 
 const FoodBottomSheet = (): React.JSX.Element => {
-    const insertUserFoodStatus = useInsertUserFoodStatus();
+    const insertUserFoodStatus = useUpsertOrDeleteUserFoodStatus();
     const { setBottomSheet, closeBottomSheet } = useBottomSheetStore();
     const { selectedFood, updateSelectedFoodStatus } = useFoodStore();
 

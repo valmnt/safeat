@@ -9,12 +9,12 @@ class UserFoodRepositoryImpl extends UserFoodStatusRepository {
         super(dataSource);
     }
 
-    async insertUserFoodStatus(
+    async upsertOrDeleteUserFoodStatus(
         foodId: string,
         statusType: FoodStatusType,
     ): Promise<Success<void> | Failure> {
         return await (this.dataSource as UserFoodStatusDataSource)
-            .insertUserFoodStatus(foodId, statusType)
+            .upsertOrDeleteUserFoodStatus(foodId, statusType)
             .then(value => {
                 return new Success(value);
             })

@@ -3,11 +3,20 @@ import UserFoodStatusDataSource from '../../domain/datasources/UserFoodStatusDat
 import { FoodStatusType } from '../../models/FoodStatus';
 
 class RemoteUserFoodDataSource extends UserFoodStatusDataSource {
-    async insertUserFoodStatus(
+    async upsertOrDeleteUserFoodStatus(
         foodId: string,
         statusType: FoodStatusType,
     ): Promise<void> {
         const userId = (await supabase.auth.getUser()).data.user?.id;
+
+        if (statusType === FoodStatusType.unknown) {
+            await supabase
+                .from('user_food_status')
+                .delete()
+                .eq('food_id', foodId)
+                .eq('user_id', userId);
+            return;
+        }
 
         const { data: statusData } = await supabase
             .from('status')
