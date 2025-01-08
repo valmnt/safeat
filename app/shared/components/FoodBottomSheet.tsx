@@ -26,6 +26,9 @@ const FoodBottomSheet = (): React.JSX.Element => {
 
     useEffect(() => {
         setBottomSheet(bottomSheetRef);
+    }, []);
+
+    useEffect(() => {
         setLocalFoods(
             Object.values(FoodStatusType).map(status => ({
                 ...selectedFood,
