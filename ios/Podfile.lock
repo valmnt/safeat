@@ -52,6 +52,8 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
+  - ExpoSplashScreen (0.29.20):
+    - ExpoModulesCore
   - FBLazyVector (0.76.3)
   - fmt (9.1.0)
   - glog (0.3.5)
@@ -1911,6 +1913,7 @@ DEPENDENCIES:
   - ExpoLinking (from `../node_modules/expo-linking/ios`)
   - ExpoLocalization (from `../node_modules/expo-localization/ios`)
   - ExpoModulesCore (from `../node_modules/expo-modules-core`)
+  - ExpoSplashScreen (from `../node_modules/expo-splash-screen/ios`)
   - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
   - fmt (from `../node_modules/react-native/third-party-podspecs/fmt.podspec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
@@ -2018,6 +2021,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/expo-localization/ios"
   ExpoModulesCore:
     :path: "../node_modules/expo-modules-core"
+  ExpoSplashScreen:
+    :path: "../node_modules/expo-splash-screen/ios"
   FBLazyVector:
     :path: "../node_modules/react-native/Libraries/FBLazyVector"
   fmt:
@@ -2173,6 +2178,7 @@ SPEC CHECKSUMS:
   ExpoLinking: 40e30b571ffb77b280a38bed137d89b21f46f2a0
   ExpoLocalization: d81f70d53db94b31e4a0b1e11007424ea1011a1c
   ExpoModulesCore: 8bbf85e190212bc72f444a4032a97b65c2a1ee93
+  ExpoSplashScreen: ecc937bf66daf3be21135268a3e2bd3a67ec7871
   FBLazyVector: be7314029d6ec6b90f0f75ce1195b8130ed9ac4f
   fmt: 10c6e61f4be25dc963c36bd73fc7b1705fe975be
   glog: 08b301085f15bcbb6ff8632a8ebaf239aae04e6a
@@ -2247,6 +2253,6 @@ SPEC CHECKSUMS:
   SocketRocket: d4aabe649be1e368d1318fdf28a022d714d65748
   Yoga: 3deb2471faa9916c8a82dda2a22d3fba2620ad37
 
-PODFILE CHECKSUM: c615ef3feb9080775f00fafb05ff417eea3d28b0
+PODFILE CHECKSUM: 08dec1d9096bb60201bbb7ec4a77f05657dc7064
 
 COCOAPODS: 1.16.2
