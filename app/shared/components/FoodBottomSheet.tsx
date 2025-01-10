@@ -84,6 +84,7 @@ const FoodBottomSheet = (): React.JSX.Element => {
         <BottomSheet
             ref={bottomSheetRef}
             index={-1}
+            snapPoints={[350]}
             enablePanDownToClose={true}
             onChange={handleSheetChanges}
             backdropComponent={renderBackdrop}
