@@ -2,7 +2,7 @@ import BottomSheet, {
     BottomSheetBackdrop,
     BottomSheetView,
 } from '@gorhom/bottom-sheet';
-import { useEffect, useRef, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import useBottomSheetStore from '../stores/bottomSheetStore';
 import useFoodStore from '../stores/foodStore';
 import { Pressable, Text, View } from 'react-native';
@@ -16,17 +16,12 @@ import useUpsertOrDeleteUserFoodStatus from '../hooks/useUpsertOrDeleteUserFoodS
 
 const FoodBottomSheet = (): React.JSX.Element => {
     const insertUserFoodStatus = useUpsertOrDeleteUserFoodStatus();
-    const { setBottomSheet, closeBottomSheet } = useBottomSheetStore();
+    const { bottomSheetRef, closeBottomSheet } = useBottomSheetStore();
     const { selectedFood, updateSelectedFoodStatus } = useFoodStore();
 
-    const bottomSheetRef = useRef<BottomSheet>(null);
     const [localFoods, setLocalFoods] = useState<Food[]>([]);
     const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
     const [isLoading, setIsLoading] = useState(false);
-
-    useEffect(() => {
-        setBottomSheet(bottomSheetRef);
-    }, []);
 
     useEffect(() => {
         setLocalFoods(

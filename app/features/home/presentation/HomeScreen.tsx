@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback, useRef } from 'react';
 import { ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import SignOutButton from './components/SignOutButton';
@@ -14,6 +14,10 @@ import useFetchFoodsPreview from '../hooks/useFetchFoodsPreview';
 import useFoodStore from '@/app/shared/stores/foodStore';
 import FoodsPreview from './components/FoodsPreview';
 import useCategoryStore from '@/app/shared/stores/categoryStore';
+import FoodBottomSheet from '@/app/shared/components/FoodBottomSheet';
+import useBottomSheetStore from '@/app/shared/stores/bottomSheetStore';
+import BottomSheet from '@gorhom/bottom-sheet';
+import Food from '@/app/shared/models/Food';
 
 interface HomeScreenProps {
     router: Router;
@@ -23,8 +27,11 @@ const HomeScreen = ({ router }: HomeScreenProps): React.JSX.Element => {
     const signOut = useSignOut();
     const fetchCategories = useFetchCategories();
     const fetchFoodsPreview = useFetchFoodsPreview();
-    const { foods, setFoods } = useFoodStore();
+    const { foods, setFoods, setSelectedFood } = useFoodStore();
     const { categories, setCategories } = useCategoryStore();
+
+    const bottomSheetRef = useRef<BottomSheet>(null);
+    const { setBottomSheet, openBottomSheet } = useBottomSheetStore();
 
     const [loadingCategories, setLoadingCategories] = useState(true);
     const [loadingFoods, setLoadingFoods] = useState(true);
@@ -40,11 +47,17 @@ const HomeScreen = ({ router }: HomeScreenProps): React.JSX.Element => {
     );
 
     useEffect(() => {
+        setBottomSheet(bottomSheetRef);
         fetchCategories(categories => {
             setCategories(categories);
             setLoadingCategories(false);
         });
     }, []);
+
+    const handlePressFood = (food: Food) => {
+        setSelectedFood(food);
+        openBottomSheet();
+    };
 
     return (
         <SafeAreaView className='flex-1 bg-blue-100'>
@@ -78,8 +91,12 @@ const HomeScreen = ({ router }: HomeScreenProps): React.JSX.Element => {
                     onPress={() => {
                         router.push('/features/foods/presentation/FoodsScreen');
                     }}
+                    onPressFood={(food: Food) => {
+                        handlePressFood(food);
+                    }}
                 />
             </ScrollView>
+            <FoodBottomSheet />
         </SafeAreaView>
     );
 };

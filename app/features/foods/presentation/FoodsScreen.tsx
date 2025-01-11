@@ -19,6 +19,7 @@ import SearchBar from './components/SearchBar';
 import FoodCard from '@/app/shared/components/FoodCard';
 import { useLocalSearchParams } from 'expo-router';
 import { FoodStatusType } from '@/app/shared/models/FoodStatus';
+import FoodBottomSheet from '@/app/shared/components/FoodBottomSheet';
 
 type LoadingState = 'initial' | 'more' | 'ready';
 
@@ -291,6 +292,7 @@ const FoodsScreen = () => {
                 windowSize={10}
                 initialNumToRender={numColumns * 4}
             />
+            <FoodBottomSheet />
         </View>
     );
 };

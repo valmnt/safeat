@@ -1,8 +1,6 @@
 import i18n from '@/app/config/i18n';
 import FoodCard from '@/app/shared/components/FoodCard';
 import Food from '@/app/shared/models/Food';
-import useBottomSheetStore from '@/app/shared/stores/bottomSheetStore';
-import useFoodStore from '@/app/shared/stores/foodStore';
 import React from 'react';
 import {
     View,
@@ -17,21 +15,15 @@ interface FoodsPreviewProps {
     foods: Food[];
     isLoading: boolean;
     onPress: () => void;
+    onPressFood: (food: Food) => void;
 }
 
 const FoodsPreview = ({
     foods,
     isLoading,
     onPress,
+    onPressFood,
 }: FoodsPreviewProps): React.JSX.Element => {
-    const { setSelectedFood } = useFoodStore();
-    const { openBottomSheet } = useBottomSheetStore();
-
-    const handlePress = (food: Food) => {
-        setSelectedFood(food);
-        openBottomSheet();
-    };
-
     return (
         <View className='items-center mt-4'>
             <View className='w-11/12 lg:w-3/4 h-12 flex-row'>
@@ -71,7 +63,7 @@ const FoodsPreview = ({
                             <FoodCard
                                 key={index}
                                 food={food}
-                                onPress={() => handlePress(food)}
+                                onPress={() => onPressFood(food)}
                             />
                         </View>
                     ))}
