@@ -1,35 +1,41 @@
 {
-    "expo": {
-        "name": "Safeat",
-        "slug": "safeat",
-        "version": "1.0.0",
-        "scheme": "safeat",
-        "orientation": "portrait",
-        "userInterfaceStyle": "light",
-        "newArchEnabled": true,
-        "icon": "./assets/images/icon/icon.png",
-        "ios": {
-            "bundleIdentifier": "org.stixe.safeat",
-            "supportsTablet": true
-        },
-        "android": {
-            "package": "org.stixe.safeat",
-            "adaptiveIcon": {
-                "foregroundImage": "./assets/images/icon/adaptive-icon.png",
-                "backgroundColor": "#0A9985"
-            }
-        },
-        "plugins": [
-            "expo-router",
-            "expo-localization",
-            [
-                "expo-splash-screen",
-                {
-                    "backgroundColor": "#0A9985",
-                    "image": "./assets/images/icon/splash-icon.png",
-                    "imageWidth": 200
-                }
-            ]
-        ]
-    }
+  "expo": {
+    "name": "Safeat",
+    "slug": "safeat",
+    "version": "1.0.0",
+    "scheme": "safeat",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "icon": "./assets/images/icon/icon.png",
+    "ios": {
+      "bundleIdentifier": "org.stixe.safeat",
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "org.stixe.safeat",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/icon/adaptive-icon.png",
+        "backgroundColor": "#0A9985"
+      }
+    },
+    "plugins": [
+      "expo-router",
+      "expo-localization",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#0A9985",
+          "image": "./assets/images/icon/splash-icon.png",
+          "imageWidth": 200
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "8685876c-903c-42f1-909a-0b64409cb272"
+      }
+    },
+    "owner": "valmnt"
+  }
 }
