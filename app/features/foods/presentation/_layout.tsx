@@ -5,7 +5,6 @@ import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import i18n from '@/app/config/i18n';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import Toast from 'react-native-toast-message';
 
 export default function Layout() {
     return (
@@ -38,7 +37,6 @@ export default function Layout() {
                     },
                 }}
             />
-            <Toast />
         </GestureHandlerRootView>
     );
 }
