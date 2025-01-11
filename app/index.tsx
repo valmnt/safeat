@@ -5,6 +5,10 @@ import { useEffect, useState } from 'react';
 import supabase from './config/supabase';
 import { View, ActivityIndicator } from 'react-native';
 import React from 'react';
+import {
+    configureReanimatedLogger,
+    ReanimatedLogLevel,
+} from 'react-native-reanimated';
 
 export default function App(): React.JSX.Element {
     const [isAuthenticated, setAuthenticated] = useState(false);
@@ -17,6 +21,10 @@ export default function App(): React.JSX.Element {
     };
 
     useEffect(() => {
+        configureReanimatedLogger({
+            level: ReanimatedLogLevel.error,
+            strict: true,
+        });
         initializeSession();
     }, []);
 
