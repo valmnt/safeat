@@ -6,6 +6,8 @@
   </p>
 </div>
 
+<img src="./assets/resources/banner.jpg" />
+
 ### Built With
 
 The project is built using Expo and Supabase, leveraging their powerful features to create a dynamic and responsive application.
