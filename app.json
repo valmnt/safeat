@@ -7,12 +7,17 @@
         "orientation": "portrait",
         "userInterfaceStyle": "light",
         "newArchEnabled": true,
+        "icon": "./assets/images/icon/icon.png",
         "ios": {
             "bundleIdentifier": "org.stixe.safeat",
             "supportsTablet": true
         },
         "android": {
-            "package": "org.stixe.safeat"
+            "package": "org.stixe.safeat",
+            "adaptiveIcon": {
+                "foregroundImage": "./assets/images/icon/adaptive-icon.png",
+                "backgroundColor": "#0A9985"
+            }
         },
         "plugins": [
             "expo-router",
@@ -20,8 +25,8 @@
             [
                 "expo-splash-screen",
                 {
-                    "backgroundColor": "#F3F6FC",
-                    "image": "./assets/images/png/food.png",
+                    "backgroundColor": "#0A9985",
+                    "image": "./assets/images/icon/splash-icon.png",
                     "imageWidth": 200
                 }
             ]
