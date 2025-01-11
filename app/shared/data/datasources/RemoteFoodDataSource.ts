@@ -14,6 +14,28 @@ class RemoteFoodDataSource implements FoodDataSource {
     ): Promise<Food[]> {
         const userId = (await supabase.auth.getUser()).data.user?.id;
 
+        const query = this.buildQuery(
+            userId,
+            limit,
+            search,
+            category,
+            status,
+            offset,
+        );
+
+        const { data } = (await query) as any;
+
+        return this.transformData(data);
+    }
+
+    private buildQuery(
+        userId: string | undefined,
+        limit: number,
+        search?: string,
+        category?: string,
+        status?: string,
+        offset?: number,
+    ) {
         const baseQuery = `
             id,
             image,
@@ -49,16 +71,15 @@ class RemoteFoodDataSource implements FoodDataSource {
             query = query.range(offset, offset + limit - 1);
         }
 
-        query = query.limit(limit);
+        return query.limit(limit);
+    }
 
-        const { data } = (await query) as any;
-
+    private transformData(data: any): Food[] {
         return data?.map((item: any) => {
             item.image = supabase.storage
                 .from('safeat_public')
                 .getPublicUrl(item.image).data.publicUrl;
-            const food = Food.from(item, i18n.locale);
-            return food;
+            return Food.from(item, i18n.locale);
         }) as Food[];
     }
 }
