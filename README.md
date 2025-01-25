@@ -1,12 +1,22 @@
 <div align="center">
   <h3 align="center">safeat</h3>
 
+**🚨 This project is no longer maintained. Its sole purpose was to explore and test the creation and development of a React Native application.**
+
   <p align="center">
     A minimal yet impactful digestive wellness application
   </p>
 </div>
 
-<img src="./assets/resources/banner.jpg" />
+<div align="center">
+	<img src="./assets/images/docs/frameOne.png" width="120" />
+	<img src="./assets/images/docs/frameTwo.png" width="120" />
+	<img src="./assets/images/docs/frameThree.png" width="120" />
+	<img src="./assets/images/docs/frameFour.png" width="120" />
+	<img src="./assets/images/docs/frameFive.png" width="120" />
+	<img src="./assets/images/docs/frameSix.png" width="120" />
+</div>
+
 
 ### Built With
 
